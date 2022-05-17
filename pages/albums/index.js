@@ -25,7 +25,7 @@ const AlbumsPage = ({ albums }) => {
         <Row>
         {albums.map ((album, index) => {
             const { featuredImage, title, slug } = album.node;
-            const { src, alt, width, height } = featuredImage.node;
+            const { sourceUrl, altText, mediaDetails } = featuredImage.node;
             return <Col key={index} xs="6" sm="4">
                 <Image 
                     src={sourceUrl}
@@ -34,7 +34,7 @@ const AlbumsPage = ({ albums }) => {
                     height={mediaDetails.height}
                 />
                 <Heading level="3">{title}</Heading>
-                <Paragraph>
+                <Paragraph> 
                     <Link href={`/albums/${slug}`}>
                         <a>
                             Read More
